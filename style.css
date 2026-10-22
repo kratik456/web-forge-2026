@@ -3,3 +3,67 @@
 @media(max-width:1200px){.sidebar{width:210px}.main{margin-left:210px}.content{padding:22px 20px}.dashboard-grid{grid-template-columns:1fr 1fr}.distribution-panel,.priority-panel,.map-panel{grid-column:span 1}.complaints-panel{grid-column:2;grid-row:1 / span 2}.map-panel{grid-column:1 / span 2}.recurring-panel,.ai-panel{grid-column:span 1;grid-row:auto}.distribution-content{gap:12px}.donut{width:125px;height:125px}.donut:before{width:77px;height:77px}.legend{gap:9px}}
 @media(max-width:800px){.sidebar{transform:translateX(-100%);transition:.25s;width:245px;box-shadow:10px 0 30px #172b4d12}.sidebar.open{transform:translateX(0)}.main{margin-left:0}.mobile-menu{display:block;border:0;background:transparent;font-size:21px;color:#52647e}.topbar{padding:0 16px;gap:12px;height:66px}.profile,.chevron{display:none}.content{padding:22px 14px}.welcome-row{align-items:flex-start}.welcome-row h1{font-size:21px}.welcome-row .primary-btn{padding:10px;font-size:11px;white-space:nowrap}.stats-grid{grid-template-columns:1fr 1fr;gap:10px}.stat-card{padding:14px;min-height:132px}.dashboard-grid{grid-template-columns:1fr}.distribution-panel,.priority-panel,.complaints-panel,.map-panel,.recurring-panel,.ai-panel{grid-column:1;grid-row:auto}.complaints-panel{grid-row:auto}.distribution-content{justify-content:space-around}.donut{width:140px;height:140px}.donut:before{width:85px;height:85px}.map-illustration{height:260px}.panel{padding:15px}.filter-row{flex-direction:column}.panel-heading{margin-bottom:15px}footer{gap:10px;flex-direction:column}.search-wrap{padding:0 8px}.search-wrap input{font-size:11px}.top-actions{gap:7px}.form-two{grid-template-columns:1fr}.welcome-row .eyebrow{font-size:8px}}
 @media(max-width:400px){.stats-grid{gap:8px}.stat-card strong{font-size:25px}.stat-card p{font-size:11px}.distribution-content{flex-direction:column}.legend{width:100%}.welcome-row{flex-direction:column}.welcome-row .primary-btn{align-self:flex-start}}
+
+
+
+.track-complaint {
+  max-width: 650px;
+  margin: 32px auto;
+  padding: 24px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.track-complaint h2 {
+  margin-top: 0;
+}
+
+#trackForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+#complaintIdInput {
+  flex: 1;
+  min-width: 180px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+#trackForm button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #176b50;
+  color: white;
+  cursor: pointer;
+}
+
+#trackResult {
+  margin-top: 18px;
+  overflow-wrap: anywhere;
+}
+
+.track-result-card {
+  padding: 16px;
+  border: 1px solid #d9e5df;
+  border-radius: 10px;
+  background: #f5faf7;
+}
+
+.track-result-card p {
+  margin: 8px 0;
+}
+
+.track-status {
+  font-weight: bold;
+  color: #176b50;
+}
+
+.track-error {
+  color: #b42318;
+}

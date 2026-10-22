@@ -21,6 +21,9 @@
       <button class="nav-link" data-page="Analytics"><span>▥</span> Analytics</button>
       <button class="nav-link" data-page="Resources"><span>♧</span> Resources</button>
       <button class="nav-link" data-page="Reports"><span>▧</span> Reports</button>
+      <button class="nav-link" data-page="Track Complaint">
+        <span>🔎</span> Track Complaint
+       </button>
     </nav> 
     <div class="sidebar-bottom">
       <div class="city-art">🏙️</div>
@@ -92,6 +95,26 @@
         <div class="panel-heading"><div><h2>Complaint management</h2><p>Review reports and update their status</p></div><div class="filter-row"><select id="statusFilter"><option value="All">All statuses</option><option>Pending</option><option>In Progress</option><option>Resolved</option></select><select id="categoryFilter"><option value="All">All categories</option><option>Pothole</option><option>Garbage</option><option>Water leakage</option><option>Streetlight</option></select></div></div>
         <div class="table-wrap"><table><thead><tr><th>Complaint</th><th>Location</th><th>Category</th><th>Priority</th><th>Status</th><th>Action</th></tr></thead><tbody id="complaintTable"></tbody></table></div>
       </section>
+
+      
+
+        <section class="track-complaint" id="track-complaint">
+  <h2>Check Complaint Status</h2>
+  <p>Enter your complaint ID to track its progress.</p>
+
+  <form id="trackForm">
+    <input
+      type="text"
+      id="complaintIdInput"
+      placeholder="e.g. CS-2026-0001"
+      required
+    />
+    <button type="submit">Track Complaint</button>
+  </form>
+
+  <div id="trackResult" aria-live="polite"></div>
+</section>
+      
       <footer>© 2026 CivicSense <span>Built for Web Forge 2026 • Prototype with sample data</span></footer>
     </section>
   </main>
@@ -108,5 +131,7 @@
   </div>
   <div class="toast" id="toast"></div>
   <script src="script.js"></script>
+
+
 </body>
 </html>
