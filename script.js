@@ -39,7 +39,7 @@ const seedComplaints = [
     status: "Resolved",
     time: "6 hours ago",
     description: "Streetlight is not illuminating the footpath.",
-  },
+  }, 
   {
     id: "CS-1044",
     title: "Pothole on service road",
