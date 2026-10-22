@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CivicSense — Civic Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#" data-page="Dashboard">
+      <span class="brand-mark">✦</span>
+      <span><b>Civic<span>Sense</span></b><small>Smarter cities. Happier communities.</small></span>
+    </a>
+    <nav class="nav">
+      <button class="nav-link active" data-page="Dashboard"><span>⌂</span> Dashboard</button>
+      <button class="nav-link" data-page="Complaints"><span>▤</span> Complaints <i id="navCount">48</i></button>
+      <button class="nav-link" data-page="Map View"><span>⌖</span> Map view</button>
+      <button class="nav-link" data-page="Analytics"><span>▥</span> Analytics</button>
+      <button class="nav-link" data-page="Resources"><span>♧</span> Resources</button>
+      <button class="nav-link" data-page="Reports"><span>▧</span> Reports</button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="city-art">🏙️</div>
+      <b>Better streets start<br>with being heard.</b>
+      <p>One report at a time, we make our communities better.</p>
+      <div class="sidebar-foot">CivicSense <span>•</span> Demo workspace</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="mobile-menu" id="mobileMenu" aria-label="Toggle menu">☰</button>
+      <div class="search-wrap"><span>⌕</span><input id="globalSearch" placeholder="Search complaints, locations, or IDs..." /></div>
+      <div class="top-actions"><button class="icon-button" id="notifyBtn" title="Notifications">♧<em></em></button><div class="avatar">SK</div><div class="profile"><b>Seetesh Kurmi</b><small>Campus Admin</small></div><span class="chevron">⌄</span></div>
+    </header>
+
+    <section class="content">
+      <div class="welcome-row">
+        <div><p class="eyebrow">CIVIC INTELLIGENCE PLATFORM</p><h1 id="pageTitle">Good morning, Seetesh <span>✦</span></h1><p class="muted" id="pageSubtitle">Here’s what’s happening across your campus today.</p></div>
+        <button class="primary-btn" id="newComplaintBtn"><span>＋</span> New complaint</button>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card blue"><div class="stat-top"><span class="stat-icon">▤</span><span class="trend positive">↗ 12%</span></div><p>Total complaints</p><strong id="totalStat">48</strong><small>vs. last 7 days</small></article>
+        <article class="stat-card amber"><div class="stat-top"><span class="stat-icon">◷</span><span class="trend warn">↗ 8%</span></div><p>Pending review</p><strong id="pendingStat">23</strong><small>Needs attention</small></article>
+        <article class="stat-card green"><div class="stat-top"><span class="stat-icon">✓</span><span class="trend positive">↗ 33%</span></div><p>Resolved</p><strong id="resolvedStat">21</strong><small>vs. last 7 days</small></article>
+        <article class="stat-card rose"><div class="stat-top"><span class="stat-icon">!</span><span class="trend warn">Priority</span></div><p>High priority</p><strong id="highStat">8</strong><small>Requires quick action</small></article>
+      </div>
+
+      <div class="dashboard-grid">
+        <section class="panel distribution-panel">
+          <div class="panel-heading"><div><h2>Issue distribution</h2><p>Reported problems by category</p></div><button class="text-btn" data-page="Analytics">View analytics ↗</button></div>
+          <div class="distribution-content"><div class="donut" id="donut"><div class="donut-center"><strong id="donutTotal">48</strong><span>Reports</span></div></div><div class="legend" id="legend"></div></div>
+        </section>
+        <section class="panel priority-panel">
+          <div class="panel-heading"><div><h2>Priority breakdown</h2><p>AI-assisted urgency assessment</p></div><span class="pill neutral">This week</span></div>
+          <div class="bar-chart"><div class="y-labels"><span>20</span><span>15</span><span>10</span><span>5</span><span>0</span></div><div class="bars"><div class="bar-column"><b id="highBarLabel">8</b><div class="bar red" id="highBar" style="height:40%"></div><span>High</span></div><div class="bar-column"><b>15</b><div class="bar orange" style="height:75%"></div><span>Medium</span></div><div class="bar-column"><b>18</b><div class="bar green-bar" style="height:90%"></div><span>Low</span></div></div></div>
+        </section>
+        <section class="panel complaints-panel">
+          <div class="panel-heading"><div><h2>Recent complaints</h2><p>Latest reports from your community</p></div><button class="text-btn" data-page="Complaints">View all →</button></div>
+          <div class="complaint-list" id="recentList"></div>
+        </section>
+        <section class="panel map-panel">
+          <div class="panel-heading"><div><h2>Issue locations</h2><p>Illustrative campus incident map</p></div><button class="text-btn" data-page="Map View">Open map ↗</button></div>
+          <div class="map-illustration">
+            <div class="map-road road-a"></div><div class="map-road road-b"></div><div class="map-road road-c"></div>
+            <div class="green-space park-one"></div><div class="green-space park-two"></div><div class="building b-one"></div><div class="building b-two"></div><div class="building b-three"></div><div class="building b-four"></div>
+            <span class="map-label label-one">Main Gate</span><span class="map-label label-two">Hostel Block B</span><span class="map-label label-three">Science Block</span>
+            <button class="map-pin pin-one" title="Pothole near Main Gate">!</button><button class="map-pin pin-two" title="Garbage near Hostel Block B">♻</button><button class="map-pin pin-three" title="Water leakage">滴</button><button class="map-pin pin-four" title="Streetlight issue">✦</button><button class="map-pin pin-five" title="Pothole on service road">!</button>
+            <div class="map-legend"><span><i class="dot red-dot"></i>Pothole</span><span><i class="dot green-dot"></i>Garbage</span><span><i class="dot blue-dot"></i>Water</span><span><i class="dot purple-dot"></i>Streetlight</span></div>
+            <small class="map-credit">Schematic demo map • Not real geographic data</small>
+          </div>
+        </section>
+        <section class="panel recurring-panel">
+          <div class="panel-heading"><div><h2>Recurring areas</h2><p>Locations with repeated reports</p></div><span class="sparkle">✦</span></div>
+          <div class="recurring-list"><div class="recurring-row"><span class="place-icon red-bg">⚠</span><div><b>Main Gate</b><small>7 related reports</small></div><span class="up-count">↑ 3 this week</span></div><div class="recurring-row"><span class="place-icon green-bg">♻</span><div><b>Hostel Block B</b><small>5 related reports</small></div><span class="up-count">↑ 2 this week</span></div><div class="recurring-row"><span class="place-icon blue-bg">◉</span><div><b>Service Road</b><small>4 related reports</small></div><span class="up-count">↑ 2 this week</span></div><div class="recurring-row"><span class="place-icon amber-bg">☼</span><div><b>Academic Road</b><small>3 related reports</small></div><span class="up-count">↑ 1 this week</span></div></div>
+        </section>
+        <section class="panel ai-panel">
+          <div class="ai-heading"><span class="ai-sparkle">✦</span><div><h2>AI insights</h2><p>Signals that can help your next decision</p></div><span class="demo-tag">DEMO</span></div>
+          <div class="insight"><span class="insight-icon purple-bg">◎</span><div><b>Recurring issue detected</b><p>Pothole near Main Gate has 7 similar reports in the last 7 days.</p></div></div>
+          <div class="insight"><span class="insight-icon violet-bg">♧</span><div><b>Recommended action</b><p>Schedule a site inspection and route the issue to road maintenance.</p></div></div>
+          <div class="insight"><span class="insight-icon blue-bg">♙</span><div><b>Resource suggestion</b><p>Consider assigning 2 staff members and 1 maintenance vehicle.</p></div></div>
+          <button class="ai-button" id="aiReportBtn">Generate priority report <span>→</span></button>
+          <p class="disclaimer">Demo insights are rule-based examples, not verified AI predictions.</p>
+        </section>
+      </div>
+
+      <section class="panel all-complaints" id="allComplaints">
+        <div class="panel-heading"><div><h2>Complaint management</h2><p>Review reports and update their status</p></div><div class="filter-row"><select id="statusFilter"><option value="All">All statuses</option><option>Pending</option><option>In Progress</option><option>Resolved</option></select><select id="categoryFilter"><option value="All">All categories</option><option>Pothole</option><option>Garbage</option><option>Water leakage</option><option>Streetlight</option></select></div></div>
+        <div class="table-wrap"><table><thead><tr><th>Complaint</th><th>Location</th><th>Category</th><th>Priority</th><th>Status</th><th>Action</th></tr></thead><tbody id="complaintTable"></tbody></table></div>
+      </section>
+      <footer>© 2026 CivicSense <span>Built for Web Forge 2026 • Prototype with sample data</span></footer>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="modalBackdrop">
+    <form class="modal" id="complaintForm">
+      <div class="modal-head"><div><p class="eyebrow">COMMUNITY REPORT</p><h2>Submit a complaint</h2><p class="muted">Share an issue so the right team can review it.</p></div><button type="button" class="close-btn" id="closeModal">×</button></div>
+      <label>Issue title<input required id="issueTitle" placeholder="e.g. Pothole near the main gate"></label>
+      <div class="form-two"><label>Category<select id="issueCategory"><option>Pothole</option><option>Garbage</option><option>Water leakage</option><option>Streetlight</option><option>Other</option></select></label><label>Location<input required id="issueLocation" placeholder="e.g. Main Gate"></label></div>
+      <label>Description<textarea required id="issueDescription" rows="3" placeholder="Describe what happened and any safety concerns..."></textarea></label>
+      <label>Urgency<select id="issueUrgency"><option>Medium</option><option>High</option><option>Low</option></select></label>
+      <div class="modal-actions"><button type="button" class="secondary-btn" id="cancelModal">Cancel</button><button class="primary-btn" type="submit">Analyze & submit ↗</button></div>
+    </form>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
